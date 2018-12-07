@@ -1,0 +1,21 @@
+server.port: 7272
+
+web-hook:
+  ignored-user: jenkins
+  jenkins-host: https://jenkins.javatar.space
+  allowed-branch: develop
+  authorization-header: Basic amVua2luc1dlYkhvb2s6amVua2luc1dlYkhvb2s=
+  incoming-security-token: pipeline
+
+web-hook-prod:
+  jenkins-host: todo
+  authorization-header: todo
+
+---
+spring:
+  profiles: integration-test
+
+server.port: 6565
+
+web-hook:
+  jenkins-host: http://localhost:6565

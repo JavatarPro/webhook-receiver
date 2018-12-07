@@ -1,0 +1,112 @@
+{
+  "object_kind": "push",
+  "event_name": "push",
+  "before": "12b1f6f321e6f4bbd3391deb4fffe02a2ba5bc27",
+  "after": "4ff05ad59a5a0a4cf2d669ead927fb3a1a2eb407",
+  "ref": "refs/heads/develop",
+  "checkout_sha": "4ff05ad59a5a0a4cf2d669ead927fb3a1a2eb407",
+  "message": null,
+  "user_id": 79,
+  "user_name": "Borys Zora",
+  "user_username": "bzora",
+  "user_email": "bzora@javatar.pro",
+  "user_avatar": "https://gitlab.javatar.pro/uploads/-/system/user/avatar/79/avatar.png",
+  "project_id": 161,
+  "project": {
+    "id": 161,
+    "name": "configuration-service",
+    "description": "",
+    "web_url": "https://gitlab.javatar.pro/services/configuration-service",
+    "avatar_url": null,
+    "git_ssh_url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "git_http_url": "https://gitlab.javatar.pro/services/configuration-service.git",
+    "namespace": "services",
+    "visibility_level": 0,
+    "path_with_namespace": "services/configuration-service",
+    "default_branch": "master",
+    "ci_config_path": null,
+    "homepage": "https://gitlab.javatar.pro/services/configuration-service",
+    "url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "ssh_url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "http_url": "https://gitlab.javatar.pro/services/configuration-service.git"
+  },
+  "commits": [
+    {
+      "id": "48a6ea6d659036be83e429a2fec5ea9882d46d9a",
+      "message": "Starting release 1.5\n",
+      "timestamp": "2018-04-09T12:56:26+00:00",
+      "url": "https://gitlab.javatar.pro/services/configuration-service/commit/48a6ea6d659036be83e429a2fec5ea9882d46d9a",
+      "author": {
+        "name": "jenkins",
+        "email": "jenkins@javatar.pro"
+      },
+      "added": [],
+      "modified": [
+        "configuration-service-app/pom.xml",
+        "pom.xml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "efbbc11290e1edcc66a6be101448144c93440214",
+      "message": "Merge branch 'release/1.5'\n",
+      "timestamp": "2018-04-09T12:59:13+00:00",
+      "url": "https://gitlab.javatar.pro/services/configuration-service/commit/efbbc11290e1edcc66a6be101448144c93440214",
+      "author": {
+        "name": "jenkins",
+        "email": "jenkins@javatar.pro"
+      },
+      "added": [],
+      "modified": [
+        ".gitignore",
+        "README.md",
+        "configuration-service-app/pom.xml",
+        "configuration-service-app/src/main/resources/application.yml",
+        "pom.xml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "0fd92c012e110499ff8a74dfc5e1ccd821fa3489",
+      "message": "Merge tag '1.5' into develop\n\nRelease 1.5 1.5\n",
+      "timestamp": "2018-04-09T12:59:13+00:00",
+      "url": "https://gitlab.javatar.pro/services/configuration-service/commit/0fd92c012e110499ff8a74dfc5e1ccd821fa3489",
+      "author": {
+        "name": "jenkins",
+        "email": "jenkins@javatar.pro"
+      },
+      "added": [],
+      "modified": [
+        "configuration-service-app/pom.xml",
+        "pom.xml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "4ff05ad59a5a0a4cf2d669ead927fb3a1a2eb407",
+      "message": "Update version to 1.6-SNAPSHOT\n",
+      "timestamp": "2018-04-09T12:59:24+00:00",
+      "url": "https://gitlab.javatar.pro/services/configuration-service/commit/4ff05ad59a5a0a4cf2d669ead927fb3a1a2eb407",
+      "author": {
+        "name": "jenkins",
+        "email": "jenkins@javatar.pro"
+      },
+      "added": [],
+      "modified": [
+        "configuration-service-app/pom.xml",
+        "pom.xml"
+      ],
+      "removed": []
+    }
+  ],
+  "total_commits_count": 4,
+  "repository": {
+    "name": "configuration-service",
+    "url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "description": "",
+    "homepage": "https://gitlab.javatar.pro/services/configuration-service",
+    "git_http_url": "https://gitlab.javatar.pro/services/configuration-service.git",
+    "git_ssh_url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "visibility_level": 0
+  }
+}

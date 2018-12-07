@@ -1,0 +1,90 @@
+{
+  "object_kind": "push",
+  "event_name": "push",
+  "before": "87adb487755ac2447154bf9c9779235d4734d42f",
+  "after": "727298124061a2585c61207f5e97fce7d5d504ad",
+  "ref": "refs/heads/master",
+  "checkout_sha": "727298124061a2585c61207f5e97fce7d5d504ad",
+  "message": null,
+  "user_id": 79,
+  "user_name": "Borys Zora",
+  "user_username": "bzora",
+  "user_email": "bzora@javatar.pro",
+  "user_avatar": "https://gitlab.javatar.pro/uploads/-/system/user/avatar/79/avatar.png",
+  "project_id": 161,
+  "project": {
+    "id": 161,
+    "name": "configuration-service",
+    "description": "",
+    "web_url": "https://gitlab.javatar.pro/services/configuration-service",
+    "avatar_url": null,
+    "git_ssh_url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "git_http_url": "https://gitlab.javatar.pro/services/configuration-service.git",
+    "namespace": "services",
+    "visibility_level": 0,
+    "path_with_namespace": "services/configuration-service",
+    "default_branch": "master",
+    "ci_config_path": null,
+    "homepage": "https://gitlab.javatar.pro/services/configuration-service",
+    "url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "ssh_url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "http_url": "https://gitlab.javatar.pro/services/configuration-service.git"
+  },
+  "commits": [
+    {
+      "id": "727298124061a2585c61207f5e97fce7d5d504ad",
+      "message": "removed unnecessary parameter\n",
+      "timestamp": "2018-03-21T22:08:49+02:00",
+      "url": "https://gitlab.javatar.pro/services/configuration-service/commit/727298124061a2585c61207f5e97fce7d5d504ad",
+      "author": {
+        "name": "Serhii Petrychenko",
+        "email": "spetrychenko@javatar.pro"
+      },
+      "added": [],
+      "modified": [
+        "configuration-service-app/src/main/resources/application.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "283bac48a2acc0e98bdbf34a935878490883b3e9",
+      "message": "Merge branch 'master' of gitlab.javatar.pro:services/configuration-service\n",
+      "timestamp": "2018-03-21T22:03:07+02:00",
+      "url": "https://gitlab.javatar.pro/services/configuration-service/commit/283bac48a2acc0e98bdbf34a935878490883b3e9",
+      "author": {
+        "name": "Serhii Petrychenko",
+        "email": "spetrychenko@javatar.pro"
+      },
+      "added": [],
+      "modified": [
+        "configuration-service-app/src/main/resources/application.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "87adb487755ac2447154bf9c9779235d4734d42f",
+      "message": "added ssh key to configuration\n",
+      "timestamp": "2018-03-21T22:02:51+02:00",
+      "url": "https://gitlab.javatar.pro/services/configuration-service/commit/87adb487755ac2447154bf9c9779235d4734d42f",
+      "author": {
+        "name": "Serhii Petrychenko",
+        "email": "spetrychenko@javatar.pro"
+      },
+      "added": [],
+      "modified": [
+        "configuration-service-app/src/main/resources/application.yml"
+      ],
+      "removed": []
+    }
+  ],
+  "total_commits_count": 3,
+  "repository": {
+    "name": "configuration-service",
+    "url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "description": "",
+    "homepage": "https://gitlab.javatar.pro/services/configuration-service",
+    "git_http_url": "https://gitlab.javatar.pro/services/configuration-service.git",
+    "git_ssh_url": "git@gitlab.javatar.pro:services/configuration-service.git",
+    "visibility_level": 0
+  }
+}

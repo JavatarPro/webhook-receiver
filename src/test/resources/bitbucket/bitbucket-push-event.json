@@ -1,0 +1,491 @@
+{
+  "push": {
+    "changes": [
+      {
+        "forced": false,
+        "old": {
+          "target": {
+            "hash": "0916642d2d944c7b2d828b6311af9cf6ebdf9478",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+              }
+            },
+            "author": {
+              "raw": "Andrii Murashkin <andrii.murashkin@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "andrii_murashkin",
+                "display_name": "Andrii Murashkin",
+                "account_id": "5b281e9d882031170e5e3e8a",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/andrii_murashkin"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/andrii_murashkin/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/andrii_murashkin/avatar/"
+                  }
+                },
+                "type": "user",
+                "nickname": "andrii_murashkin",
+                "uuid": "{dfb641a3-fe20-4315-a1b0-f327c7d5bee0}"
+              }
+            },
+            "summary": {
+              "raw": "Merged in andrii/WORK-105-create-db-layer-for-resume (pull request #29)\n\nAndrii/WORK-105 create db layer for resume\n\nApproved-by: Serhii Petrychenko\n",
+              "markup": "markdown",
+              "html": "<p>Merged in andrii/WORK-105-create-db-layer-for-resume (pull request #29)</p>\n<p>Andrii/WORK-105 create db layer for resume</p>\n<p>Approved-by: Serhii Petrychenko</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "82cf776efb3165a67ed20e119cba7002ebb878f4",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/82cf776efb3165a67ed20e119cba7002ebb878f4"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/82cf776efb3165a67ed20e119cba7002ebb878f4"
+                  }
+                }
+              },
+              {
+                "type": "commit",
+                "hash": "c23f37cf0c118492f15a14be81fe4cb862f01cdc",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/c23f37cf0c118492f15a14be81fe4cb862f01cdc"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/c23f37cf0c118492f15a14be81fe4cb862f01cdc"
+                  }
+                }
+              }
+            ],
+            "date": "2018-10-11T19:59:38+00:00",
+            "message": "Merged in andrii/WORK-105-create-db-layer-for-resume (pull request #29)\n\nAndrii/WORK-105 create db layer for resume\n\nApproved-by: Serhii Petrychenko\n",
+            "type": "commit"
+          },
+          "links": {
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commits/develop"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/refs/branches/develop"
+            },
+            "html": {
+              "href": "https://bitbucket.org/javatar-pro-work/work-service/branch/develop"
+            }
+          },
+          "default_merge_strategy": "merge_commit",
+          "merge_strategies": [
+            "merge_commit",
+            "squash",
+            "fast_forward"
+          ],
+          "type": "branch",
+          "name": "develop"
+        },
+        "links": {
+          "commits": {
+            "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commits?include=30b91f11607b8491c1b36c50e17cb7d7b25f8572&exclude=0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+          },
+          "html": {
+            "href": "https://bitbucket.org/javatar-pro-work/work-service/branches/compare/30b91f11607b8491c1b36c50e17cb7d7b25f8572..0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+          },
+          "diff": {
+            "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/diff/30b91f11607b8491c1b36c50e17cb7d7b25f8572..0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+          }
+        },
+        "truncated": false,
+        "commits": [
+          {
+            "hash": "30b91f11607b8491c1b36c50e17cb7d7b25f8572",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/30b91f11607b8491c1b36c50e17cb7d7b25f8572"
+              },
+              "comments": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/30b91f11607b8491c1b36c50e17cb7d7b25f8572/comments"
+              },
+              "patch": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/patch/30b91f11607b8491c1b36c50e17cb7d7b25f8572"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/30b91f11607b8491c1b36c50e17cb7d7b25f8572"
+              },
+              "diff": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/diff/30b91f11607b8491c1b36c50e17cb7d7b25f8572"
+              },
+              "approve": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/30b91f11607b8491c1b36c50e17cb7d7b25f8572/approve"
+              },
+              "statuses": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/30b91f11607b8491c1b36c50e17cb7d7b25f8572/statuses"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "bzora",
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/bzora"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/bzora/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/bzora/avatar/"
+                  }
+                },
+                "type": "user",
+                "nickname": "bzora",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "add infra configuration (draft)\n",
+              "markup": "markdown",
+              "html": "<p>add infra configuration (draft)</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "0916642d2d944c7b2d828b6311af9cf6ebdf9478",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+                  }
+                }
+              }
+            ],
+            "date": "2018-10-13T20:33:10+00:00",
+            "message": "add infra configuration (draft)\n",
+            "type": "commit"
+          },
+          {
+            "hash": "7789c6f9076c2185583842443f684e0922d19650",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/7789c6f9076c2185583842443f684e0922d19650"
+              },
+              "comments": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/7789c6f9076c2185583842443f684e0922d19650/comments"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/7789c6f9076c2185583842443f684e0922d19650"
+              },
+              "diff": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/diff/7789c6f9076c2185583842443f684e0922d19650"
+              },
+              "approve": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/7789c6f9076c2185583842443f684e0922d19650/approve"
+              },
+              "statuses": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/7789c6f9076c2185583842443f684e0922d19650/statuses"
+              }
+            },
+            "author": {
+              "raw": "Andrii Murashkin <andrii.murashkin@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "andrii_murashkin",
+                "display_name": "Andrii Murashkin",
+                "account_id": "5b281e9d882031170e5e3e8a",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/andrii_murashkin"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/andrii_murashkin/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/andrii_murashkin/avatar/"
+                  }
+                },
+                "type": "user",
+                "nickname": "andrii_murashkin",
+                "uuid": "{dfb641a3-fe20-4315-a1b0-f327c7d5bee0}"
+              }
+            },
+            "summary": {
+              "raw": "Merged in andrii/WORK-141-Replace-profile-id-by-UUID-identifier (pull request #36)\n\nAndrii/WORK-141 Replace profile id by UUID identifier\n\nApproved-by: Serhii Petrychenko\n",
+              "markup": "markdown",
+              "html": "<p>Merged in andrii/WORK-141-Replace-profile-id-by-UUID-identifier (pull request #36)</p>\n<p>Andrii/WORK-141 Replace profile id by UUID identifier</p>\n<p>Approved-by: Serhii Petrychenko</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "65c88af35d0778da90387576b0ffbe0bf6343bee",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/65c88af35d0778da90387576b0ffbe0bf6343bee"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/65c88af35d0778da90387576b0ffbe0bf6343bee"
+                  }
+                }
+              },
+              {
+                "type": "commit",
+                "hash": "01fc6aa6ce8446b316ef96e136a42051ebb6d6d7",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7"
+                  }
+                }
+              }
+            ],
+            "date": "2018-10-19T21:07:01+00:00",
+            "message": "Merged in andrii/WORK-141-Replace-profile-id-by-UUID-identifier (pull request #36)\n\nAndrii/WORK-141 Replace profile id by UUID identifier\n\nApproved-by: Serhii Petrychenko\n",
+            "type": "commit"
+          },
+          {
+            "hash": "01fc6aa6ce8446b316ef96e136a42051ebb6d6d7",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7"
+              },
+              "comments": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7/comments"
+              },
+              "patch": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/patch/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7"
+              },
+              "diff": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/diff/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7"
+              },
+              "approve": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7/approve"
+              },
+              "statuses": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/01fc6aa6ce8446b316ef96e136a42051ebb6d6d7/statuses"
+              }
+            },
+            "author": {
+              "raw": "Andrii O Murashkin <andrii.murashkin@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "andrii_murashkin",
+                "display_name": "Andrii Murashkin",
+                "account_id": "5b281e9d882031170e5e3e8a",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/andrii_murashkin"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/andrii_murashkin/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/andrii_murashkin/avatar/"
+                  }
+                },
+                "type": "user",
+                "nickname": "andrii_murashkin",
+                "uuid": "{dfb641a3-fe20-4315-a1b0-f327c7d5bee0}"
+              }
+            },
+            "summary": {
+              "raw": "WORK-141 Replace profile id by UUID identifier\n- reverted profile id column name\n",
+              "markup": "markdown",
+              "html": "<p>WORK-141 Replace profile id by UUID identifier<br />\n- reverted profile id column name</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "1bab9640a8c58244418ca9d640dd7d6bba87d5a7",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/1bab9640a8c58244418ca9d640dd7d6bba87d5a7"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/1bab9640a8c58244418ca9d640dd7d6bba87d5a7"
+                  }
+                }
+              }
+            ],
+            "date": "2018-10-17T19:42:50+00:00",
+            "message": "WORK-141 Replace profile id by UUID identifier\n- reverted profile id column name\n",
+            "type": "commit"
+          }
+        ],
+        "created": false,
+        "closed": false,
+        "new": {
+          "target": {
+            "hash": "30b91f11607b8491c1b36c50e17cb7d7b25f8572",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/30b91f11607b8491c1b36c50e17cb7d7b25f8572"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/30b91f11607b8491c1b36c50e17cb7d7b25f8572"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "bzora",
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/bzora"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/bzora/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/bzora/avatar/"
+                  }
+                },
+                "type": "user",
+                "nickname": "bzora",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "add infra configuration (draft)\n",
+              "markup": "markdown",
+              "html": "<p>add infra configuration (draft)</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "0916642d2d944c7b2d828b6311af9cf6ebdf9478",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commit/0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/work-service/commits/0916642d2d944c7b2d828b6311af9cf6ebdf9478"
+                  }
+                }
+              }
+            ],
+            "date": "2018-10-13T20:33:10+00:00",
+            "message": "add infra configuration (draft)\n",
+            "type": "commit"
+          },
+          "links": {
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/commits/develop"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service/refs/branches/develop"
+            },
+            "html": {
+              "href": "https://bitbucket.org/javatar-pro-work/work-service/branch/develop"
+            }
+          },
+          "default_merge_strategy": "merge_commit",
+          "merge_strategies": [
+            "merge_commit",
+            "squash",
+            "fast_forward"
+          ],
+          "type": "branch",
+          "name": "develop"
+        }
+      }
+    ]
+  },
+  "repository": {
+    "scm": "git",
+    "website": "",
+    "name": "work-service",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/work-service"
+      },
+      "html": {
+        "href": "https://bitbucket.org/javatar-pro-work/work-service"
+      },
+      "avatar": {
+        "href": "https://bytebucket.org/ravatar/%7B1d2a487e-bd44-4f44-89ab-21c679f31965%7D?ts=default"
+      }
+    },
+    "project": {
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/teams/javatar-pro-work/projects/WORK"
+        },
+        "html": {
+          "href": "https://bitbucket.org/account/user/javatar-pro-work/projects/WORK"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/user/javatar-pro-work/projects/WORK/avatar/32"
+        }
+      },
+      "type": "project",
+      "uuid": "{4abf0ecf-2c50-4092-93fc-34ca152d5449}",
+      "key": "WORK",
+      "name": "work"
+    },
+    "full_name": "javatar-pro-work/work-service",
+    "owner": {
+      "username": "javatar-pro-work",
+      "type": "team",
+      "display_name": "javatar-pro-work",
+      "uuid": "{bdf73cff-4815-4fec-aeff-eb6faae29688}",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/teams/javatar-pro-work"
+        },
+        "html": {
+          "href": "https://bitbucket.org/javatar-pro-work/"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/javatar-pro-work/avatar/"
+        }
+      }
+    },
+    "type": "repository",
+    "is_private": true,
+    "uuid": "{1d2a487e-bd44-4f44-89ab-21c679f31965}"
+  },
+  "actor": {
+    "username": "bzora",
+    "display_name": "Borys Zora",
+    "account_id": "5adc841c58742e214dcfdf8f",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/users/bzora"
+      },
+      "html": {
+        "href": "https://bitbucket.org/bzora/"
+      },
+      "avatar": {
+        "href": "https://bitbucket.org/account/bzora/avatar/"
+      }
+    },
+    "type": "user",
+    "nickname": "bzora",
+    "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+  }
+}
