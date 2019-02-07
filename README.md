@@ -24,4 +24,16 @@ webhook-receiver
 - support jenkins webhooks
 - add persistence storage (mysql, if not specified h2)
 
-        
+## docker image release
+[webhook-receiver on docker hub](https://hub.docker.com/r/javatar/webhook-receiver/)
+
+    mvn clean package
+    docker build
+    imageName=webhook-receiver
+    version=0.1
+    image=${imageName}:${version}
+    registry=javatar
+    docker build -t ${image} .
+    docker tag ${image} ${registry}/${image}
+    docker push ${registry}/${image}   
+      
