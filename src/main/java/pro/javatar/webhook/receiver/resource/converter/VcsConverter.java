@@ -22,7 +22,10 @@ public abstract class VcsConverter {
     private static final Logger logger = LoggerFactory.getLogger(VcsConverter.class);
 
     public VcsPushRequestBO toVcsPushRequestBO(VcsPushRequestTO pushRequestTO) {
-        Map body = pushRequestTO.getBody();
+        String body = pushRequestTO.getRawBody();
+        if (body == null) {
+            return null;
+        }
         return new VcsPushRequestBO()
                         .withAuthors(retrieveAuthors(body))
                         .withCommitter(retrieveCommitter(body))
@@ -31,50 +34,14 @@ public abstract class VcsConverter {
                         .withRepoOwner(retrieveCommittedRepoOwner(body));
     }
 
-    abstract String retrieveCommitter(Map<String, Object> body);
+    abstract String retrieveCommitter(String body);
 
-    abstract Set<String> retrieveAuthors(Map<String, Object> body);
+    abstract Set<String> retrieveAuthors(String body);
 
-    abstract String retrieveCommittedBranch(Map<String, Object> body);
+    abstract String retrieveCommittedBranch(String body);
 
-    abstract String retrieveCommittedRepo(Map<String, Object> body);
+    abstract String retrieveCommittedRepo(String body);
 
-    abstract String retrieveCommittedRepoOwner(Map<String, Object> body);
+    abstract String retrieveCommittedRepoOwner(String body);
 
-    public <T> T getByDotNotationFistItem(String line, Map<String, Object> map, Class<T> clazz) {
-        var items = getByDotNotation(line, map, List.class);
-        if (items == null) return null;
-        return (T) items.get(0);
-    }
-
-    public Object getByDotNotationFistItem(String line, Map<String, Object> map) {
-        var items = getByDotNotation(line, map, List.class);
-        if (items == null) return null;
-        return items.get(0);
-    }
-
-    public String getByDotNotation(String line, Map<String, Object> map) {
-        return getByDotNotation(line, map, String.class);
-    }
-
-    public <T> T getByDotNotation(String line, Map<String, Object> map, Class<T> clazz) {
-        try {
-            Map<String, Object> tmp = map;
-            String[] items = line.split("\\.");
-            for(int i = 0; i < items.length - 1; i++) {
-                tmp = (Map<String, Object>) tmp.get(items[i]);
-                if (tmp == null) {
-                    return null;
-                }
-            }
-            Object result = tmp.get(items[items.length - 1]);
-            if(result == null) {
-                return null;
-            }
-            return (T) result;
-        } catch (Exception e) {
-            logger.warn(e.getMessage(), e);
-            return null;
-        }
-    }
 }

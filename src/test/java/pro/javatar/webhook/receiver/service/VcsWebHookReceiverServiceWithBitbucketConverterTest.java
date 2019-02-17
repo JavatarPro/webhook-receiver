@@ -6,9 +6,9 @@ package pro.javatar.webhook.receiver.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.core.Is;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import pro.javatar.webhook.receiver.config.WebHookConfig;
 import pro.javatar.webhook.receiver.resource.converter.BitbucketVcsConverter;
 import pro.javatar.webhook.receiver.resource.converter.VcsConverter;
@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
 
 /**
@@ -35,7 +35,7 @@ public class VcsWebHookReceiverServiceWithBitbucketConverterTest {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         WebHookConfig webHookConfig = new WebHookConfig();
         webHookConfig.setJenkinsHost("http://localhost:8080");
@@ -51,28 +51,28 @@ public class VcsWebHookReceiverServiceWithBitbucketConverterTest {
         assertThat(service.shouldTriggerJenkinsWebHook(request), Is.is(true));
     }
 
-    @Ignore // TODO provide json
+    @Disabled // TODO provide json
     @Test
     public void shouldNotTriggerJenkinsWebHookWrongBranch() throws IOException {
         VcsPushRequestBO request = getVcsPushRequestBO("bitbucket/bitbucket-test-push-event.json");
         assertThat(service.shouldTriggerJenkinsWebHook(request), Is.is(false));
     }
 
-    @Ignore // TODO provide json
+    @Disabled // TODO provide json
     @Test
     public void shouldNotTriggerJenkinsWebHookWrongUser() throws IOException {
         VcsPushRequestBO request = getVcsPushRequestBO("bitbucket/bitbucket-jenkins-push-event.json");
         assertThat(service.shouldTriggerJenkinsWebHook(request), Is.is(false));
     }
 
-    @Ignore // TODO provide json
+    @Disabled // TODO provide json
     @Test
     public void shouldNotTriggerJenkinsWebHookWrongAuthor() throws IOException {
         VcsPushRequestBO request = getVcsPushRequestBO("bitbucket/bitbucket-dev-cred-but-jenkins-push-event.json");
         assertThat(service.shouldTriggerJenkinsWebHook(request), Is.is(false));
     }
 
-    @Ignore // TODO provide json
+    @Disabled // TODO provide json
     @Test
     public void isAuthorIgnoredUserPositiveCase() throws IOException {
         VcsPushRequestBO request = getVcsPushRequestBO("bitbucket/bitbucket-dev-cred-but-jenkins-push-event.json");
@@ -111,7 +111,7 @@ public class VcsWebHookReceiverServiceWithBitbucketConverterTest {
     public VcsPushRequestBO getVcsPushRequestBO(String jsonFileInClasspath) throws IOException {
         String jsonBody = getFileAsString(jsonFileInClasspath);
         Map body = objectMapper.readValue(jsonBody, HashMap.class);
-        VcsPushRequestTO pushRequestTO = new VcsPushRequestTO().withBody(body);
+        VcsPushRequestTO pushRequestTO = new VcsPushRequestTO().withBody(body).withRawBody(jsonBody);
         return vcsConverterService.toVcsPushRequestBO(pushRequestTO)
                 .withWebHookBody(jsonBody);
     }

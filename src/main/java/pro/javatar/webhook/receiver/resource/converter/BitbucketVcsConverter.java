@@ -4,6 +4,11 @@
  */
 package pro.javatar.webhook.receiver.resource.converter;
 
+import com.jayway.jsonpath.JsonPath;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,43 +18,42 @@ import java.util.Set;
  */
 public class BitbucketVcsConverter extends VcsConverter {
 
+    private static final Logger logger = LoggerFactory.getLogger(GitLabVcsConverter.class);
+
     @Override
-    public String retrieveCommitter(Map<String, Object> body) {
+    public String retrieveCommitter(String body) {
         // Map.get("body.actor.username");
-        return getByDotNotation("actor.username", body);
+        return JsonPath.read(body, "$.actor.username");
     }
 
     @Override
-    public Set<String> retrieveAuthors(Map body) {
+    public Set<String> retrieveAuthors(String body) {
         // return new HashSet<String>(body.push.changes.commits.author.user.username.get(0));
-        var result = getByDotNotationFistItem("push.changes.commits.author.user.username", body);
-        if (result == null) {
-            return null;
-        }
-        return (Set<String>) result;
+        return new HashSet<>(JsonPath.read(body, "$.push.changes[*].commits[*].author.user.username"));
     }
 
     @Override
-    public String retrieveCommittedBranch(Map body) {
+    public String retrieveCommittedBranch(String body) {
 //        if ("branch".equals(body.push.changes.new.type.get(0))) {
 //            return body.push.changes.new.name.get(0);
 //        }
-        if ("branch".equals(getByDotNotationFistItem("push.changes.new.type", body))) {
-            return getByDotNotationFistItem("push.changes.new.name", body, String.class);
+        String branch = JsonPath.read(body, "$.push.changes[0].new.type");
+        if ("branch".equals(branch)) {
+            return JsonPath.read(body, "$.push.changes[0].new.name");
         }
         return "";
     }
 
     @Override
-    public String retrieveCommittedRepo(Map body) {
+    public String retrieveCommittedRepo(String body) {
         // return body.repository.name;
-        return getByDotNotation("repository.name", body);
+        return JsonPath.read(body, "$.repository.name");
     }
 
     @Override
-    public String retrieveCommittedRepoOwner(Map body) {
+    public String retrieveCommittedRepoOwner(String body) {
         // return body.repository.owner.username;
-        return getByDotNotation("repository.owner.username", body);
+        return JsonPath.read(body, "$.repository.owner.username");
     }
 
 }

@@ -6,8 +6,8 @@ package pro.javatar.webhook.receiver.resource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.core.Is;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
 
 /**
@@ -51,7 +51,7 @@ public class GitLabWebHookReceiverResourceIT {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         objectMapper.findAndRegisterModules();
     }

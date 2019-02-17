@@ -6,8 +6,8 @@ package pro.javatar.webhook.receiver.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.core.Is;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import pro.javatar.webhook.receiver.config.WebHookConfig;
 import pro.javatar.webhook.receiver.resource.converter.GitLabVcsConverter;
 import pro.javatar.webhook.receiver.resource.converter.VcsConverter;
@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
 
 /**
@@ -34,7 +34,7 @@ public class VcsWebHookReceiverServiceTest {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         WebHookConfig webHookConfig = new WebHookConfig();
         webHookConfig.setJenkinsHost("http://localhost:8080");
@@ -106,7 +106,8 @@ public class VcsWebHookReceiverServiceTest {
     VcsPushRequestBO getVcsPushRequestBO(String jsonFileInClasspath) throws IOException {
         String jsonBody = getFileAsString(jsonFileInClasspath);
         Map body = objectMapper.readValue(jsonBody, HashMap.class);
-        VcsPushRequestTO pushRequestTO = new VcsPushRequestTO().withBody(body);
+        VcsPushRequestTO pushRequestTO = new VcsPushRequestTO()
+                .withBody(body).withRawBody(jsonBody);
         return vcsConverterService.toVcsPushRequestBO(pushRequestTO)
                 .withWebHookBody(jsonBody);
     }

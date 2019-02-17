@@ -63,8 +63,7 @@ public class VcsWebHookReceiverService {
 
     boolean isBranchAllowed(VcsPushRequestBO pushRequest) {
         // TODO depends which branches for which repo is allowed
-//        return webHookConfig.allowedBranch.equalsIgnoreCase(pushRequest.getCommittedBranch());
-        return false; // TODO
+        return webHookConfig.getAllowedBranch().equalsIgnoreCase(pushRequest.getCommittedBranch());
     }
 
 }

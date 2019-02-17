@@ -4,7 +4,7 @@
  */
 package pro.javatar.webhook.receiver;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +15,9 @@ import pro.javatar.webhook.receiver.config.WebHookConfig;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class WebHookReceiverApplicationTests {
+public class WebHookReceiverApplicationTest {
 
-	private static final Logger logger = LoggerFactory.getLogger(WebHookReceiverApplicationTests.class);
+	private static final Logger logger = LoggerFactory.getLogger(WebHookReceiverApplicationTest.class);
 
 	@Autowired
 	WebHookConfig webHookConfig;

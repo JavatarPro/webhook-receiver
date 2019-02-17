@@ -5,13 +5,13 @@
 package pro.javatar.webhook.receiver.resource.converter;
 
 import org.hamcrest.core.Is;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import pro.javatar.commons.reader.JsonReader;
 
 import java.util.*;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author Borys Zora
@@ -21,14 +21,14 @@ public class BitbucketVcsConverterTest {
 
     VcsConverter converter;
 
-    Map body;
+    String body;
 
     JsonReader jsonReader = new JsonReader();
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         converter = new BitbucketVcsConverter();
-        body = jsonReader.getObjectFromFile("bitbucket/bitbucket-push-event.json", HashMap.class);
+        body = jsonReader.getStringFromFile("bitbucket/bitbucket-push-event.json");
     }
 
     @Test
