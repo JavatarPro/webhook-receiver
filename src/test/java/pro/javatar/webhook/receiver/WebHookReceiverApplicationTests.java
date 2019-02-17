@@ -15,7 +15,7 @@ import pro.javatar.webhook.receiver.config.WebHookConfig;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-class WebHookReceiverApplicationTests {
+public class WebHookReceiverApplicationTests {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebHookReceiverApplicationTests.class);
 
@@ -23,7 +23,7 @@ class WebHookReceiverApplicationTests {
 	WebHookConfig webHookConfig;
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 		logger.info(webHookConfig.toString());
 	}
 

@@ -4,6 +4,9 @@
  */
 package pro.javatar.webhook.receiver.resource.converter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -16,8 +19,10 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
  */
 public class GitLabVcsConverter extends VcsConverter {
 
+    private static final Logger logger = LoggerFactory.getLogger(GitLabVcsConverter.class);
+
     @Override
-    String retrieveCommitter(Map body) {
+    String retrieveCommitter(Map<String, Object> body) {
 //        return body.user_username;
         return null;
     }
