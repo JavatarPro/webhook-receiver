@@ -24,7 +24,6 @@ public class GitLabVcsConverter extends VcsConverter {
 
     @Override
     String retrieveCommitter(String body) {
-//        return body.user_username;
         return JsonPath.read(body, "$.user_username");
     }
 
@@ -49,13 +48,11 @@ public class GitLabVcsConverter extends VcsConverter {
 
     @Override
     String retrieveCommittedRepo(String body) {
-        // return body.project.name;
         return JsonPath.read(body, "$.project.name");
     }
 
     @Override
     String retrieveCommittedRepoOwner(String body) {
-        // return body.project.namespace;
         return JsonPath.read(body, "$.project.namespace");
     }
 
