@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @SpringBootApplication(scanBasePackages = "pro.javatar")
-class WebHookReceiverApplication {
+public class WebHookReceiverApplication {
 
 	public static void main(String[] args) {
         SpringApplication.run(WebHookReceiverApplication.class, args); //NOSONAR
