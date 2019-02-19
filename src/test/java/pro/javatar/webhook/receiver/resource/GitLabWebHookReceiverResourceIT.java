@@ -6,8 +6,8 @@ package pro.javatar.webhook.receiver.resource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.core.Is;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
 
 /**
@@ -39,7 +39,7 @@ import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Import(GitLabWebHookReceiverResourceIT.SiblingsRouterApp.class)
 @ActiveProfiles("integration-test")
-class GitLabWebHookReceiverResourceIT {
+public class GitLabWebHookReceiverResourceIT {
 
     private static final Logger logger = LoggerFactory.getLogger(GitLabWebHookReceiverResourceIT.class);
 
@@ -51,27 +51,27 @@ class GitLabWebHookReceiverResourceIT {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    @Before
-    void setUp() throws Exception {
+    @BeforeAll
+    public void setUp() throws Exception {
         objectMapper.findAndRegisterModules();
     }
 
     @Test
-    void handleWebHookWhenDevUser() throws IOException {
+    public void handleWebHookWhenDevUser() throws IOException {
         String body = getFileAsString("gitlab-dev-push-event.json");
         Map receiverResponse = sendPostRequest(body);
         assertThat(receiverResponse.get("webHookReceiver"), Is.is("jenkins web hook was triggered"));
     }
 
     @Test
-    void handleWebHookWhenJenkinsUser() throws IOException {
+    public void handleWebHookWhenJenkinsUser() throws IOException {
         String body = getFileAsString("gitlab-jenkins-push-event.json");
         Map receiverResponse = sendPostRequest(body);
         assertThat(receiverResponse.get("webHookReceiver"), Is.is("commit will be ignored"));
     }
 
     @Test
-    void handleWebHookWhenDevCredentialsButAuthorJenkinsUser() throws IOException {
+    public void handleWebHookWhenDevCredentialsButAuthorJenkinsUser() throws IOException {
         String body = getFileAsString("gitlab-dev-cred-but-jenkins-push-event.json");
         Map receiverResponse = sendPostRequest(body);
         assertThat(receiverResponse.get("webHookReceiver"), Is.is("commit will be ignored"));

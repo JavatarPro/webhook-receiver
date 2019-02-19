@@ -4,9 +4,12 @@
  */
 package pro.javatar.webhook.receiver.resource.converter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pro.javatar.webhook.receiver.resource.model.VcsPushRequestTO;
 import pro.javatar.webhook.receiver.service.model.VcsPushRequestBO;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,8 +19,13 @@ import java.util.Set;
  */
 public abstract class VcsConverter {
 
+    private static final Logger logger = LoggerFactory.getLogger(VcsConverter.class);
+
     public VcsPushRequestBO toVcsPushRequestBO(VcsPushRequestTO pushRequestTO) {
-        Map body = pushRequestTO.getBody();
+        String body = pushRequestTO.getRawBody();
+        if (body == null) {
+            return null;
+        }
         return new VcsPushRequestBO()
                         .withAuthors(retrieveAuthors(body))
                         .withCommitter(retrieveCommitter(body))
@@ -26,14 +34,14 @@ public abstract class VcsConverter {
                         .withRepoOwner(retrieveCommittedRepoOwner(body));
     }
 
-    abstract String retrieveCommitter(Map body);
+    abstract String retrieveCommitter(String body);
 
-    abstract Set<String> retrieveAuthors(Map body);
+    abstract Set<String> retrieveAuthors(String body);
 
-    abstract String retrieveCommittedBranch(Map body);
+    abstract String retrieveCommittedBranch(String body);
 
-    abstract String retrieveCommittedRepo(Map body);
+    abstract String retrieveCommittedRepo(String body);
 
-    abstract String retrieveCommittedRepoOwner(Map body);
+    abstract String retrieveCommittedRepoOwner(String body);
 
 }

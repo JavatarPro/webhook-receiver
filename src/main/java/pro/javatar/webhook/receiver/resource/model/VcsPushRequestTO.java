@@ -17,7 +17,7 @@ public class VcsPushRequestTO {
 
     Map<String, String> requestParams = new HashMap<>();
 
-    Map body = new HashMap();
+    Map<String, Object> body = new HashMap();
 
     String rawBody = "";
 
@@ -47,15 +47,15 @@ public class VcsPushRequestTO {
         return this;
     }
 
-    public Map getBody() {
+    public Map<String, Object> getBody() {
         return body;
     }
 
-    public void setBody(Map body) {
+    public void setBody(Map<String, Object> body) {
         this.body = body;
     }
 
-    public VcsPushRequestTO withBody(Map body) {
+    public VcsPushRequestTO withBody(Map<String, Object> body) {
         this.body = body;
         return this;
     }

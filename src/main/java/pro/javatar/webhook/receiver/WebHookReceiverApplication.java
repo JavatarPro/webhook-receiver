@@ -11,16 +11,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@SpringBootApplication
-class WebHookReceiverApplication {
+@SpringBootApplication(scanBasePackages = "pro.javatar")
+public class WebHookReceiverApplication {
 
 	public static void main(String[] args) {
         SpringApplication.run(WebHookReceiverApplication.class, args); //NOSONAR
-
     }
 
 	@Bean
-	RestTemplate getRestTemplate() {
+	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
 

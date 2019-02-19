@@ -4,9 +4,13 @@
  */
 package pro.javatar.webhook.receiver.resource.converter;
 
+import com.jayway.jsonpath.JsonPath;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
+import java.util.List;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
@@ -16,24 +20,26 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
  */
 public class GitLabVcsConverter extends VcsConverter {
 
+    private static final Logger logger = LoggerFactory.getLogger(GitLabVcsConverter.class);
+
     @Override
-    String retrieveCommitter(Map body) {
-//        return body.user_username;
-        return null;
+    String retrieveCommitter(String body) {
+        return JsonPath.read(body, "$.user_username");
     }
 
     @Override
-    Set<String> retrieveAuthors(Map body) {
+    Set<String> retrieveAuthors(String body) {
         Set<String> authors = new HashSet<>();
-//        for(String author: body.commits.author.name) {
-//            authors.add(author.toLowerCase());
-//        }
+        List<String> authorList = JsonPath.read(body, "$.commits[*].author.name");
+        for(String author: authorList) {
+            authors.add(author.toLowerCase());
+        }
         return authors;
     }
 
     @Override
-    String retrieveCommittedBranch(Map body) {
-        String ref = null; //body.ref;
+    String retrieveCommittedBranch(String body) {
+        String ref = JsonPath.read(body, "$.ref");
         if (isBlank(ref)) {
             return "";
         }
@@ -41,15 +47,13 @@ public class GitLabVcsConverter extends VcsConverter {
     }
 
     @Override
-    String retrieveCommittedRepo(Map body) {
-        // return body.project.name;
-        return null;
+    String retrieveCommittedRepo(String body) {
+        return JsonPath.read(body, "$.project.name");
     }
 
     @Override
-    String retrieveCommittedRepoOwner(Map body) {
-        // return body.project.namespace;
-        return null;
+    String retrieveCommittedRepoOwner(String body) {
+        return JsonPath.read(body, "$.project.namespace");
     }
 
 }
