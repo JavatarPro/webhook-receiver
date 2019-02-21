@@ -5,6 +5,9 @@
 package pro.javatar.webhook.receiver.resource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.javatar.webhook.receiver.resource.converter.BitbucketVcsConverter;
 import pro.javatar.webhook.receiver.resource.converter.VcsConverter;
+import pro.javatar.webhook.receiver.resource.exception.BadRequestRestException;
 import pro.javatar.webhook.receiver.resource.exception.WebHookRestException;
 import pro.javatar.webhook.receiver.resource.model.VcsPushRequestTO;
 import pro.javatar.webhook.receiver.resource.validator.PushRequestValidator;
@@ -58,6 +62,12 @@ class BitbucketWebHookReceiverResource {
         objectMapper.findAndRegisterModules();
     }
 
+    @ApiOperation(value = "handleBitbucketWebHookRequest")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Web hook handled successfully, already delivered to job execution"),
+            @ApiResponse(code = 202, message = "Web hook request accepted successfully, will be delivered later"),
+            @ApiResponse(code = 400, message = "Bad request, something should be changed in request")
+    })
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity handleWebHook(@RequestBody String jsonBody,
                                  @RequestParam(required = false, value = "jobUrl") String jobUrl,
@@ -80,7 +90,9 @@ class BitbucketWebHookReceiverResource {
         logger.debug("requestTO: {}", requestTO);
 
         if (!validator.isValid(requestTO)) {
-            throw new WebHookRestException();// TODO bad request
+            String errorMessage = String.join(", ", validator.getValidationErrors(requestTO));
+            throw new BadRequestRestException(errorMessage)
+                    .withPath("/bitbucket?jobUrl=" + jobUrl);
         }
 
         var requestBO = vcsConverter.toVcsPushRequestBO(requestTO);
