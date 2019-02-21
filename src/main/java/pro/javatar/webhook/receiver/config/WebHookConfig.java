@@ -34,7 +34,13 @@ public class WebHookConfig {
     }
 
     public String getJenkinsHost() {
-        return jenkinsHost;
+        if (isBlank(jenkinsHost)) {
+            return "";
+        }
+        if (jenkinsHost.endsWith("/")) {
+            return jenkinsHost;
+        }
+        return jenkinsHost + "/";
     }
 
     public void setJenkinsHost(String jenkinsHost) {

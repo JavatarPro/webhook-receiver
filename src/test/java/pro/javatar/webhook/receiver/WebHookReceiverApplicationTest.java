@@ -4,31 +4,31 @@
  */
 package pro.javatar.webhook.receiver;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.client.RestTemplate;
 import pro.javatar.webhook.receiver.config.WebHookConfig;
+import pro.javatar.webhook.receiver.service.JenkinsWebHookService;
 
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@Import(WebHookReceiverApplicationTest.WebhookTestConfiguration.class)
 public class WebHookReceiverApplicationTest {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebHookReceiverApplicationTest.class);
@@ -38,6 +38,20 @@ public class WebHookReceiverApplicationTest {
 
 	@Autowired
 	WebHookConfig webHookConfig;
+
+	@Autowired
+	JenkinsWebHookService jenkinsWebHookService;
+
+	RestTemplate restTemplate = mock(RestTemplate.class);
+
+	@BeforeEach
+	void setUp() {
+		ResponseEntity<String> entity = mock(ResponseEntity.class);
+		when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(), eq(String.class)))
+				.thenReturn(entity);
+		when(entity.getBody()).thenReturn("{}");
+		jenkinsWebHookService.setRestTemplate(restTemplate);
+	}
 
 	@Test
 	public void handleBitbucketWebHookRequestSuccessCase() throws IOException {
@@ -81,16 +95,6 @@ public class WebHookReceiverApplicationTest {
 
 	private String getHost() {
 		return "http://localhost:" + port;
-	}
-
-	@Configuration
-	public static class WebhookTestConfiguration {
-
-		@Primary
-		@Bean
-		RestTemplate getRestTemplate() {
-			return mock(RestTemplate.class);
-		}
 	}
 
 }

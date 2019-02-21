@@ -6,6 +6,8 @@ package pro.javatar.webhook.receiver.service.model;
 
 import java.util.Objects;
 
+import static org.apache.commons.lang3.StringUtils.isBlank;
+
 /**
  * @author Borys Zora
  * @version 2018-10-13
@@ -21,6 +23,12 @@ public class JenkinsRemoteJobRequest {
     private String body = "{}";
 
     public String getRemoteJobSubUrl() {
+        if (isBlank(remoteJobSubUrl)) {
+            return "";
+        }
+        if (remoteJobSubUrl.startsWith("/")) {
+            return remoteJobSubUrl.substring(1);
+        }
         return remoteJobSubUrl;
     }
 

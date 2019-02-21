@@ -13,24 +13,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pro.javatar.webhook.receiver.resource.converter.BitbucketVcsConverter;
 import pro.javatar.webhook.receiver.resource.converter.VcsConverter;
 import pro.javatar.webhook.receiver.resource.exception.BadRequestRestException;
-import pro.javatar.webhook.receiver.resource.exception.WebHookRestException;
 import pro.javatar.webhook.receiver.resource.model.VcsPushRequestTO;
 import pro.javatar.webhook.receiver.resource.validator.PushRequestValidator;
-import pro.javatar.webhook.receiver.service.model.JenkinsRemoteJobRequest;
 import pro.javatar.webhook.receiver.service.JenkinsWebHookService;
 import pro.javatar.webhook.receiver.service.VcsWebHookReceiverService;
-import pro.javatar.webhook.receiver.service.model.VcsPushRequestBO;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
