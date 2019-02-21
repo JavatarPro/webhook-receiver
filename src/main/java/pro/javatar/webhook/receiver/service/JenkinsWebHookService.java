@@ -40,23 +40,25 @@ public class JenkinsWebHookService {
     }
 
     public String triggerJenkinsJobRemotely(JenkinsRemoteJobRequest jobRequest) {
-        logger.info("triggerJenkinsJobRemotely: with jobRequest: ${jobRequest.toString()}");
+        logger.info("triggerJenkinsJobRemotely: with jobRequest: {}", jobRequest);
         String jobUrl = createUrl(jobRequest);
-        logger.info("triggerJenkinsJobRemotely jobUrl: ${jobUrl}");
+        logger.info("triggerJenkinsJobRemotely jobUrl: {}", jobUrl);
         HttpEntity request = new HttpEntity(jobRequest.getBody(), headers);
         HttpEntity<String> response = restTemplate.exchange(jobUrl, HttpMethod.GET, request, String.class);
-        logger.info("response for jobUrl: ${jobUrl} was ${response.toString()}");
+        logger.info("response for jobUrl: {} was {}", jobUrl, response);
         return response.getBody();
     }
 
     public String getJenkinsJobRemoteUrl(String remoteJobSubUrl) {
-        return "${webHookConfig.getJenkinsHost()}${remoteJobSubUrl}";
+        return webHookConfig.getJenkinsHost() + remoteJobSubUrl;
     }
 
     public String createUrl(JenkinsRemoteJobRequest jobRequest) {
         String jobUrl = getJenkinsJobRemoteUrl(jobRequest.getRemoteJobSubUrl());
-        return UriComponentsBuilder.fromHttpUrl(jobUrl).queryParam("repo", jobRequest.getRepo())
-                .queryParam("repoOwner", jobRequest.getRepoOwner()).toUriString();
+        return UriComponentsBuilder.fromHttpUrl(jobUrl)
+                .queryParam("repo", jobRequest.getRepo())
+                .queryParam("repoOwner", jobRequest.getRepoOwner())
+                .toUriString();
     }
 
 }

@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pro.javatar.webhook.receiver.resource.converter.BitbucketVcsConverter;
+import pro.javatar.webhook.receiver.resource.converter.VcsConverter;
+import pro.javatar.webhook.receiver.resource.exception.WebHookRestException;
+import pro.javatar.webhook.receiver.resource.model.VcsPushRequestTO;
+import pro.javatar.webhook.receiver.resource.validator.PushRequestValidator;
 import pro.javatar.webhook.receiver.service.model.JenkinsRemoteJobRequest;
 import pro.javatar.webhook.receiver.service.JenkinsWebHookService;
 import pro.javatar.webhook.receiver.service.VcsWebHookReceiverService;
@@ -39,6 +44,10 @@ class BitbucketWebHookReceiverResource {
 
     private JenkinsWebHookService jenkinsWebHookService;
 
+    private VcsConverter vcsConverter = new BitbucketVcsConverter();
+
+    private PushRequestValidator validator = new PushRequestValidator();
+
     ObjectMapper objectMapper = new ObjectMapper();
 
     @Autowired
@@ -56,15 +65,31 @@ class BitbucketWebHookReceiverResource {
                                  @RequestHeader(value = "X-Event-Key", required = false) String eventKey,
                                  @RequestHeader(value = "User-Agent", required = false) String userAgent,
                                  @RequestHeader(value = "X-Attempt-Number", required = false) int attemptNumber,
-                                 @RequestHeader(value = "X-Hook-UUID", required = false) String hookId)
-            throws IOException {
-        logger.info("body: ${jsonBody}");
-        var body = objectMapper.readValue(jsonBody, VcsPushRequestBO.class);
-        if (!webHookReceiverService.shouldTriggerJenkinsWebHook(body)) {
-            logger.info("commit will be ignored, body was: ${body}");
+                                 @RequestHeader(value = "X-Hook-UUID", required = false) String hookId) {
+        var requestTO = new VcsPushRequestTO()
+                .withRequestId(requestId)
+                .withJobUrl(jobUrl)
+                .withRawBody(jsonBody)
+                .addRequestParams("jobUrl", jobUrl)
+                .addHeader("X-Request-UUID", requestId)
+                .addHeader("X-Event-Key", eventKey)
+                .addHeader("User-Agent", userAgent)
+                .addHeader("X-Attempt-Number", String.valueOf(attemptNumber))
+                .addHeader("X-Hook-UUID", hookId);
+        logger.info("try to handle bitbucket web hook with: \njobUrl: {} \nbody: {}", jobUrl, jsonBody);
+        logger.debug("requestTO: {}", requestTO);
+
+        if (!validator.isValid(requestTO)) {
+            throw new WebHookRestException();// TODO bad request
+        }
+
+        var requestBO = vcsConverter.toVcsPushRequestBO(requestTO);
+
+        if (!webHookReceiverService.shouldTriggerJenkinsWebHook(requestBO)) {
+            logger.info("commit will be ignored, body was: {}", requestBO);
             return ResponseEntity.ok(prepareResponse("commit will be ignored", ""));
         }
-        var request = webHookReceiverService.getJenkinsRemoteJobRequest(null);// TODO
+        var request = webHookReceiverService.getJenkinsRemoteJobRequest(requestBO);
         String response = jenkinsWebHookService.triggerJenkinsJobRemotely(request);
         return ResponseEntity.ok(prepareResponse("jenkins web hook was triggered", response));
     }
