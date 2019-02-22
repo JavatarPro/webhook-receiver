@@ -11,6 +11,11 @@ web-hook-prod:
   jenkins-host: todo
   authorization-header: todo
 
+logging:
+  level:
+    pro.javatar: INFO
+    pro.javatar.webhook: DEBUG
+
 ---
 spring:
   profiles: integration-test
