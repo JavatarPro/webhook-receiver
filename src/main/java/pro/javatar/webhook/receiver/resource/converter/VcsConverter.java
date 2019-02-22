@@ -9,8 +9,6 @@ import org.slf4j.LoggerFactory;
 import pro.javatar.webhook.receiver.resource.model.VcsPushRequestTO;
 import pro.javatar.webhook.receiver.service.model.VcsPushRequestBO;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -26,12 +24,15 @@ public abstract class VcsConverter {
         if (body == null) {
             return null;
         }
+        // TODO add headers & params
         return new VcsPushRequestBO()
-                        .withAuthors(retrieveAuthors(body))
-                        .withCommitter(retrieveCommitter(body))
-                        .withCommittedBranch(retrieveCommittedBranch(body))
-                        .withRepo(retrieveCommittedRepo(body))
-                        .withRepoOwner(retrieveCommittedRepoOwner(body));
+                .withRemoteJobSubUrl(pushRequestTO.getJobUrl())
+                .withWebHookBody(pushRequestTO.getRawBody())
+                .withAuthors(retrieveAuthors(body))
+                .withCommitter(retrieveCommitter(body))
+                .withCommittedBranch(retrieveCommittedBranch(body))
+                .withRepo(retrieveCommittedRepo(body))
+                .withRepoOwner(retrieveCommittedRepoOwner(body));
     }
 
     abstract String retrieveCommitter(String body);

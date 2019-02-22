@@ -21,6 +21,7 @@ import pro.javatar.webhook.receiver.resource.model.VcsPushRequestTO;
 import pro.javatar.webhook.receiver.resource.validator.PushRequestValidator;
 import pro.javatar.webhook.receiver.service.JenkinsWebHookService;
 import pro.javatar.webhook.receiver.service.VcsWebHookReceiverService;
+import pro.javatar.webhook.receiver.service.model.VcsPushRequestBO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -67,7 +68,7 @@ class BitbucketWebHookReceiverResource {
                                  @RequestHeader(value = "User-Agent", required = false) String userAgent,
                                  @RequestHeader(value = "X-Attempt-Number", required = false) Integer attemptNumber,
                                  @RequestHeader(value = "X-Hook-UUID", required = false) String hookId) {
-        var requestTO = new VcsPushRequestTO()
+        VcsPushRequestTO requestTO = new VcsPushRequestTO()
                 .withRequestId(requestId)
                 .withJobUrl(jobUrl)
                 .withRawBody(jsonBody)
@@ -86,7 +87,7 @@ class BitbucketWebHookReceiverResource {
                     .withPath("/bitbucket?jobUrl=" + jobUrl);
         }
 
-        var requestBO = vcsConverter.toVcsPushRequestBO(requestTO);
+        VcsPushRequestBO requestBO = vcsConverter.toVcsPushRequestBO(requestTO);
 
         if (!webHookReceiverService.shouldTriggerJenkinsWebHook(requestBO)) {
             logger.info("commit will be ignored, body was: {}", requestBO);
