@@ -1,0 +1,329 @@
+{
+  "push": {
+    "changes": [
+      {
+        "forced": false,
+        "old": {
+          "name": "develop",
+          "links": {
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commits/develop"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/refs/branches/develop"
+            },
+            "html": {
+              "href": "https://bitbucket.org/javatar-pro-work/localization-service/branch/develop"
+            }
+          },
+          "default_merge_strategy": "merge_commit",
+          "merge_strategies": [
+            "merge_commit",
+            "squash",
+            "fast_forward"
+          ],
+          "type": "branch",
+          "target": {
+            "rendered": {},
+            "hash": "c5edad4cd0e74258739c2139d2d1fa932a248c82",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/c5edad4cd0e74258739c2139d2d1fa932a248c82"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/localization-service/commits/c5edad4cd0e74258739c2139d2d1fa932a248c82"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "bzora",
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/bzora"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/bzora/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/bzora/avatar/"
+                  }
+                },
+                "nickname": "bzora",
+                "type": "user",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "pom.xml edited online with Bitbucket",
+              "markup": "markdown",
+              "html": "<p>pom.xml edited online with Bitbucket</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "hash": "b3725317c3741d154dbd04b3c12d84fe7b2c0608",
+                "type": "commit",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/b3725317c3741d154dbd04b3c12d84fe7b2c0608"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/localization-service/commits/b3725317c3741d154dbd04b3c12d84fe7b2c0608"
+                  }
+                }
+              }
+            ],
+            "date": "2019-02-19T22:29:18+00:00",
+            "message": "pom.xml edited online with Bitbucket",
+            "type": "commit"
+          }
+        },
+        "links": {
+          "commits": {
+            "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commits?include=6a126688d9c548938badf55465b55f6d68e78109&exclude=c5edad4cd0e74258739c2139d2d1fa932a248c82"
+          },
+          "html": {
+            "href": "https://bitbucket.org/javatar-pro-work/localization-service/branches/compare/6a126688d9c548938badf55465b55f6d68e78109..c5edad4cd0e74258739c2139d2d1fa932a248c82"
+          },
+          "diff": {
+            "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/diff/6a126688d9c548938badf55465b55f6d68e78109..c5edad4cd0e74258739c2139d2d1fa932a248c82"
+          }
+        },
+        "created": false,
+        "commits": [
+          {
+            "rendered": {},
+            "hash": "6a126688d9c548938badf55465b55f6d68e78109",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/6a126688d9c548938badf55465b55f6d68e78109"
+              },
+              "comments": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/6a126688d9c548938badf55465b55f6d68e78109/comments"
+              },
+              "patch": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/patch/6a126688d9c548938badf55465b55f6d68e78109"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/localization-service/commits/6a126688d9c548938badf55465b55f6d68e78109"
+              },
+              "diff": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/diff/6a126688d9c548938badf55465b55f6d68e78109"
+              },
+              "approve": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/6a126688d9c548938badf55465b55f6d68e78109/approve"
+              },
+              "statuses": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/6a126688d9c548938badf55465b55f6d68e78109/statuses"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "bzora",
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/bzora"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/bzora/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/bzora/avatar/"
+                  }
+                },
+                "nickname": "bzora",
+                "type": "user",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "pom.xml edited online with Bitbucket",
+              "markup": "markdown",
+              "html": "<p>pom.xml edited online with Bitbucket</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "hash": "c5edad4cd0e74258739c2139d2d1fa932a248c82",
+                "type": "commit",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/c5edad4cd0e74258739c2139d2d1fa932a248c82"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/localization-service/commits/c5edad4cd0e74258739c2139d2d1fa932a248c82"
+                  }
+                }
+              }
+            ],
+            "date": "2019-02-19T22:31:29+00:00",
+            "message": "pom.xml edited online with Bitbucket",
+            "type": "commit"
+          }
+        ],
+        "truncated": false,
+        "closed": false,
+        "new": {
+          "name": "develop",
+          "links": {
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commits/develop"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/refs/branches/develop"
+            },
+            "html": {
+              "href": "https://bitbucket.org/javatar-pro-work/localization-service/branch/develop"
+            }
+          },
+          "default_merge_strategy": "merge_commit",
+          "merge_strategies": [
+            "merge_commit",
+            "squash",
+            "fast_forward"
+          ],
+          "type": "branch",
+          "target": {
+            "rendered": {},
+            "hash": "6a126688d9c548938badf55465b55f6d68e78109",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/6a126688d9c548938badf55465b55f6d68e78109"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/localization-service/commits/6a126688d9c548938badf55465b55f6d68e78109"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "username": "bzora",
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/bzora"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/bzora/"
+                  },
+                  "avatar": {
+                    "href": "https://bitbucket.org/account/bzora/avatar/"
+                  }
+                },
+                "nickname": "bzora",
+                "type": "user",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "pom.xml edited online with Bitbucket",
+              "markup": "markdown",
+              "html": "<p>pom.xml edited online with Bitbucket</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "hash": "c5edad4cd0e74258739c2139d2d1fa932a248c82",
+                "type": "commit",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service/commit/c5edad4cd0e74258739c2139d2d1fa932a248c82"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/localization-service/commits/c5edad4cd0e74258739c2139d2d1fa932a248c82"
+                  }
+                }
+              }
+            ],
+            "date": "2019-02-19T22:31:29+00:00",
+            "message": "pom.xml edited online with Bitbucket",
+            "type": "commit"
+          }
+        }
+      }
+    ]
+  },
+  "actor": {
+    "username": "bzora",
+    "display_name": "Borys Zora",
+    "account_id": "5adc841c58742e214dcfdf8f",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/users/bzora"
+      },
+      "html": {
+        "href": "https://bitbucket.org/bzora/"
+      },
+      "avatar": {
+        "href": "https://bitbucket.org/account/bzora/avatar/"
+      }
+    },
+    "nickname": "bzora",
+    "type": "user",
+    "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+  },
+  "repository": {
+    "scm": "git",
+    "website": "",
+    "name": "localization-service",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/localization-service"
+      },
+      "html": {
+        "href": "https://bitbucket.org/javatar-pro-work/localization-service"
+      },
+      "avatar": {
+        "href": "https://bytebucket.org/ravatar/%7B52cd9eb2-4d5b-4414-bb74-94c4636a871d%7D?ts=java"
+      }
+    },
+    "project": {
+      "key": "WORK",
+      "type": "project",
+      "uuid": "{4abf0ecf-2c50-4092-93fc-34ca152d5449}",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/teams/javatar-pro-work/projects/WORK"
+        },
+        "html": {
+          "href": "https://bitbucket.org/account/user/javatar-pro-work/projects/WORK"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/user/javatar-pro-work/projects/WORK/avatar/32"
+        }
+      },
+      "name": "work"
+    },
+    "full_name": "javatar-pro-work/localization-service",
+    "owner": {
+      "username": "javatar-pro-work",
+      "display_name": "javatar-pro-work",
+      "type": "team",
+      "uuid": "{bdf73cff-4815-4fec-aeff-eb6faae29688}",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/teams/javatar-pro-work"
+        },
+        "html": {
+          "href": "https://bitbucket.org/javatar-pro-work/"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/javatar-pro-work/avatar/"
+        }
+      }
+    },
+    "type": "repository",
+    "is_private": true,
+    "uuid": "{52cd9eb2-4d5b-4414-bb74-94c4636a871d}"
+  }
+}
