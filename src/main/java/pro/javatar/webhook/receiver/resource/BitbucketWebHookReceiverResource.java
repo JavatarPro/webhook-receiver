@@ -65,7 +65,7 @@ class BitbucketWebHookReceiverResource {
                                  @RequestHeader(value = "X-Request-UUID", required = false) String requestId,
                                  @RequestHeader(value = "X-Event-Key", required = false) String eventKey,
                                  @RequestHeader(value = "User-Agent", required = false) String userAgent,
-                                 @RequestHeader(value = "X-Attempt-Number", required = false) int attemptNumber,
+                                 @RequestHeader(value = "X-Attempt-Number", required = false) Integer attemptNumber,
                                  @RequestHeader(value = "X-Hook-UUID", required = false) String hookId) {
         var requestTO = new VcsPushRequestTO()
                 .withRequestId(requestId)
@@ -75,7 +75,7 @@ class BitbucketWebHookReceiverResource {
                 .addHeader("X-Request-UUID", requestId)
                 .addHeader("X-Event-Key", eventKey)
                 .addHeader("User-Agent", userAgent)
-                .addHeader("X-Attempt-Number", String.valueOf(attemptNumber))
+                .addHeader("X-Attempt-Number", attemptNumber.toString())
                 .addHeader("X-Hook-UUID", hookId);
         logger.info("try to handle bitbucket web hook with: \njobUrl: {} \nbody: {}", jobUrl, jsonBody);
         logger.debug("requestTO: {}", requestTO);
