@@ -1,3 +1,9 @@
 spring:
   application.name: webhook-receiver
 
+info:
+  app:
+    name: ${spring.application.name}
+    description: "this service is aims to help jenkins declarative pipeline to handle web hooks or other similar web hooks handlings"
+    version: @project.version@
+    artifact: @project.artifactId@
