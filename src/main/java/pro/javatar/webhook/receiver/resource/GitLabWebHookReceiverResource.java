@@ -16,7 +16,6 @@ import pro.javatar.webhook.receiver.resource.model.VcsPushRequestTO;
 import pro.javatar.webhook.receiver.service.JenkinsWebHookService;
 import pro.javatar.webhook.receiver.service.VcsWebHookReceiverService;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,13 +50,11 @@ class GitLabWebHookReceiverResource {
     // TODO add all query params
     @PostMapping
     ResponseEntity handleWebHook(@RequestBody String jsonBody,
-                                 @RequestHeader(value = "X-Gitlab-Token", required = false) String gitlabHeader)
-            throws IOException {
-        logger.info("body: ${jsonBody}");
-        var body = objectMapper.readValue(jsonBody, VcsPushRequestTO.class);
+                                 @RequestHeader(value = "X-Gitlab-Token", required = false) String gitlabHeader) {
+        logger.info("body: {}", jsonBody);
         var pushRequestTO = new VcsPushRequestTO()
+                .withJobUrl(gitlabHeader)
                 .withRawBody(jsonBody)
-                // .withBody(body) // TODO
                 .addHeader("X-Gitlab-Token", gitlabHeader);
         var requestBO = vcsConverter.toVcsPushRequestBO(pushRequestTO);
         if (!webHookReceiverService.shouldTriggerJenkinsWebHook(requestBO)) {

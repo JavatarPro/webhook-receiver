@@ -5,7 +5,7 @@
 package pro.javatar.webhook.receiver.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
@@ -13,7 +13,7 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
  * @author Borys Zora
  * @version 2018-10-13
  */
-@Configuration
+@Component
 @ConfigurationProperties("web-hook")
 public class WebHookConfig {
 
@@ -24,6 +24,8 @@ public class WebHookConfig {
     private String allowedBranch;
 
     private String authorizationHeader;
+
+    private String jenkinsJobSecurityToken;
 
     public String getIgnoredUser() {
         return ignoredUser;
@@ -64,12 +66,21 @@ public class WebHookConfig {
         this.authorizationHeader = authorizationHeader;
     }
 
+    public String getJenkinsJobSecurityToken() {
+        return jenkinsJobSecurityToken;
+    }
+
+    public void setJenkinsJobSecurityToken(String jenkinsJobSecurityToken) {
+        this.jenkinsJobSecurityToken = jenkinsJobSecurityToken;
+    }
+
     @Override
     public String toString() {
         return "WebHookConfig{" +
                 "ignoredUser='" + ignoredUser + '\'' +
                 ", jenkinsHost='" + jenkinsHost + '\'' +
                 ", allowedBranch='" + allowedBranch + '\'' +
+                ", jenkinsJobSecurityToken= '******'" +
                 ", authorizationHeader= '******'" +
                 "}";
     }

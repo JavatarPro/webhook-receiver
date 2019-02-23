@@ -26,6 +26,8 @@ public class VcsPushRequestBO {
 
     public String remoteJobSubUrl;
 
+    public String token;
+
     public String getCommitter() {
         return committer;
     }
@@ -114,6 +116,19 @@ public class VcsPushRequestBO {
 
     public VcsPushRequestBO withWebHookBody(String webHookBody) {
         this.webHookBody = webHookBody;
+        return this;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public VcsPushRequestBO withToken(String token) {
+        this.token = token;
         return this;
     }
 

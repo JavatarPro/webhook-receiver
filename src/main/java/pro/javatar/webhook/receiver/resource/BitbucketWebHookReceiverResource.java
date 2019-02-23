@@ -63,6 +63,7 @@ class BitbucketWebHookReceiverResource {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity handleWebHook(@RequestBody String jsonBody,
                                  @RequestParam(required = false, value = "jobUrl") String jobUrl,
+                                 // @RequestParam(required = false, value = "token") String token, TODO
                                  @RequestHeader(value = "X-Request-UUID", required = false) String requestId,
                                  @RequestHeader(value = "X-Event-Key", required = false) String eventKey,
                                  @RequestHeader(value = "User-Agent", required = false) String userAgent,
