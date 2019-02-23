@@ -9,6 +9,11 @@ webhook-receiver
 - Trigger: Push events
 - SSL verification: turn off
 
+### Bitbucket configuration
+- https://qa-webhook.javatar.com/bitbucket?jobUrl=job/backend/job/localization-service/buildWithParameters?token=pipeline
+- https://qa-webhook.javatar.com/bitbucket?jobUrl=job/backend/job/work-service/buildWithParameters?token=pipeline
+- https://qa-webhook.javatar.com/bitbucket?jobUrl=job/frontend/job/work-ui/buildWithParameters?token=pipeline
+https://qa-webhook.javatar.com/bitbucket?jobUrl=job/common/job/api-gateway-service/buildWithParameters?token=pipeline
 ### Jenkins configuration
 - Jenkins job type: pipeline
 - Trigger builds remotely (e.g., from scripts)
