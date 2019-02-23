@@ -2,61 +2,36 @@
  * Copyright (c) 2018 Javatar LLC
  * All rights reserved.
  */
-package pro.javatar.webhook.receiver;
+package pro.javatar.webhook.receiver.resource;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.web.client.RestTemplate;
-import pro.javatar.webhook.receiver.config.WebHookConfig;
-import pro.javatar.webhook.receiver.service.JenkinsWebHookService;
 
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class WebHookReceiverApplicationTest {
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@ActiveProfiles("integration-test")
+public class BitbucketWebHookReceiverResourceIT {
 
-	private static final Logger logger = LoggerFactory.getLogger(WebHookReceiverApplicationTest.class);
+	private static final Logger logger = LoggerFactory.getLogger(BitbucketWebHookReceiverResourceIT.class);
 
 	@LocalServerPort
 	private int port;
 
-	@Autowired
-	WebHookConfig webHookConfig;
-
-	@Autowired
-	JenkinsWebHookService jenkinsWebHookService;
-
-	RestTemplate restTemplate = mock(RestTemplate.class);
-
-	@BeforeEach
-	void setUp() {
-		ResponseEntity<String> entity = mock(ResponseEntity.class);
-		when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(), eq(String.class)))
-				.thenReturn(entity);
-		when(entity.getBody()).thenReturn("{}");
-		jenkinsWebHookService.setRestTemplate(restTemplate);
-	}
-
 	@Test
 	public void handleBitbucketWebHookRequestSuccessCase() throws IOException {
-		given().
-			queryParam("jobUrl", "https://example-jenkins-host/job/url/id").
+        given().
+			queryParam("jobUrl", "/job/backend/job/localization-service/buildWithParameters?token=pipeline").
 			header("X-Request-UUID", "5cfc7dc9-f3d9-4213-9143-b47a1a2c7ea0").
 			header("X-Event-Key", "repo:push").
 			header("X-Event-Time", "Tue, 19 Feb 2019 22:31:30 GMT").
@@ -73,10 +48,7 @@ public class WebHookReceiverApplicationTest {
 
 	@Test
 	public void handleBitbucketWebHookRequestBadRequestUrlNotProvided() throws IOException {
-		logger.info(webHookConfig.toString());
-
 		given().
-			// queryParam("jobUrl", ).
 			header("X-Request-UUID", "5cfc7dc9-f3d9-4213-9143-b47a1a2c7ea0").
 			header("X-Event-Key", "repo:push").
 			header("X-Event-Time", "Tue, 19 Feb 2019 22:31:30 GMT").
@@ -88,9 +60,7 @@ public class WebHookReceiverApplicationTest {
 		when().
 			post(getHost()+ "/bitbucket").
 		then().
-			statusCode(400).
-			assertThat();
-
+			statusCode(400);
 	}
 
 	private String getHost() {
