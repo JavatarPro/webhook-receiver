@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @author Borys Zora
  * @version 2018-11-27
  */
-@Configuration
 @ConfigurationProperties("web-hook-prod")
 public class WebHookProdConfig {
 

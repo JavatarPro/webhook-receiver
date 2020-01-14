@@ -7,6 +7,7 @@ package pro.javatar.webhook.receiver.resource.converter;
 import org.hamcrest.core.Is;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import pro.javatar.commons.reader.JsonReader;
 
 import java.util.*;
@@ -17,6 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @author Borys Zora
  * @version 2018-10-21
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BitbucketVcsConverterTest {
 
     VcsConverter converter;
