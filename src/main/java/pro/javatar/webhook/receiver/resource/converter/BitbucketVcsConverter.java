@@ -22,12 +22,12 @@ public class BitbucketVcsConverter extends VcsConverter {
 
     @Override
     public String retrieveCommitter(String body) {
-        return JsonPath.read(body, "$.actor.username");
+        return JsonPath.read(body, "$.actor.display_name");
     }
 
     @Override
     public Set<String> retrieveAuthors(String body) {
-        return new HashSet<>(JsonPath.read(body, "$.push.changes[*].commits[*].author.user.username"));
+        return new HashSet<>(JsonPath.read(body, "$.push.changes[*].commits[*].author.user.display_name"));
     }
 
     @Override

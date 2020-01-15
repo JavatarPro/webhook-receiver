@@ -10,6 +10,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import pro.javatar.webhook.receiver.config.WebHookConfig;
 import pro.javatar.webhook.receiver.resource.converter.BitbucketVcsConverter;
 import pro.javatar.webhook.receiver.resource.converter.VcsConverter;
@@ -47,9 +49,13 @@ public class VcsWebHookReceiverServiceWithBitbucketConverterTest {
         objectMapper.findAndRegisterModules();
     }
 
-    @Test
-    public void shouldTriggerJenkinsWebHook() throws IOException {
-        VcsPushRequestBO request = getVcsPushRequestBO("bitbucket/bitbucket-dev-push-event.json");
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "bitbucket/bitbucket-dev-push-event.json",
+            "bitbucket/bitbucket-dev-push-event-issue-WORK-335.json"
+    })
+    public void shouldTriggerJenkinsWebHook(String file) throws IOException {
+        VcsPushRequestBO request = getVcsPushRequestBO(file);
         assertThat(service.shouldTriggerJenkinsWebHook(request), Is.is(true));
     }
 
@@ -81,9 +87,13 @@ public class VcsWebHookReceiverServiceWithBitbucketConverterTest {
         assertThat(service.isAuthorOnlyIgnoredUser(request.getAuthors()), Is.is(true));
     }
 
-    @Test
-    public void isAuthorIgnoredUserNegativeCase() throws IOException {
-        VcsPushRequestBO request = getVcsPushRequestBO("bitbucket/bitbucket-dev-push-event.json");
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "bitbucket/bitbucket-dev-push-event.json",
+            "bitbucket/bitbucket-dev-push-event-issue-WORK-335.json"
+    })
+    public void isAuthorIgnoredUserNegativeCase(String file) throws IOException {
+        VcsPushRequestBO request = getVcsPushRequestBO(file);
         assertThat(service.isAuthorOnlyIgnoredUser(request.getAuthors()), Is.is(false));
     }
 

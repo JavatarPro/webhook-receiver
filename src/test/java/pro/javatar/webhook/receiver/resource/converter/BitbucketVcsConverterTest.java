@@ -35,14 +35,14 @@ public class BitbucketVcsConverterTest {
 
     @Test
     public void retrieveCommitter() {
-        String expected = "bzora";
+        String expected = "Borys Zora";
         String committer = converter.retrieveCommitter(body);
         assertThat(committer, Is.is(expected));
     }
 
     @Test
     public void retrieveAuthors() {
-        Set<String> expected = new HashSet<>(List.of("andrii_murashkin", "bzora"));
+        Set<String> expected = new HashSet<>(List.of("Andrii Murashkin", "Borys Zora"));
         Set<String> actual = converter.retrieveAuthors(body);
         assertThat(actual, Is.is(expected));
     }
