@@ -5,19 +5,40 @@
 
     <groupId>pro.javatar.webhook</groupId>
     <artifactId>webhook-receiver</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
 
     <properties>
+        <!-- maven -->
+        <java.version>13</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
+        <maven.enforce.plugin.version>1.4.1</maven.enforce.plugin.version>
+        <sonar.exclusions>file:**/generated-sources/**</sonar.exclusions>
 
-        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
-        <springfox-swagger2.version>2.8.0</springfox-swagger2.version>
+        <!-- spring -->
+        <spring.version>5.2.2.RELEASE</spring.version>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <spring-data.version>2.2.2.RELEASE</spring-data.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+        <spring-data-releasetrain.version>Lovelace-RELEASE</spring-data-releasetrain.version>
 
-        <jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
-        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
+        <!-- swagger -->
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <swagger-annotations.version>1.5.23</swagger-annotations.version>
+
+        <!-- other -->
+        <servlet-api.version>4.0.1</servlet-api.version>
+        <docker.image>${project.artifactId}</docker.image>
+        <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
+        <mockito.version>1.10.19</mockito.version>
+        <logback-gelf.version>1.1.0</logback-gelf.version>
         <junit-jupiter.version>5.3.1</junit-jupiter.version>
+        <security-libs.version>0.0.13</security-libs.version>
+        <jackson.version>2.9.8</jackson.version>
+        <testcontainers.version>1.11.2</testcontainers.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -105,8 +126,8 @@
             <scope>test</scope>
             <exclusions>
                 <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -171,7 +192,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -187,6 +208,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -194,17 +216,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <delimiters>
-                        <delimiter>@</delimiter>
-                    </delimiters>
-                    <useDefaultDelimiters>false</useDefaultDelimiters>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -232,6 +243,37 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/*IT.java</include>
+                    </includes>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${basedir}/target/classes</additionalClasspathElement>
+                    </additionalClasspathElements>
+                    <parallel>none</parallel>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,0 +1,328 @@
+{
+  "push": {
+    "changes": [
+      {
+        "forced": false,
+        "old": {
+          "name": "develop",
+          "links": {
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commits/develop"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/refs/branches/develop"
+            },
+            "html": {
+              "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/branch/develop"
+            }
+          },
+          "default_merge_strategy": "merge_commit",
+          "merge_strategies": [
+            "merge_commit",
+            "squash",
+            "fast_forward"
+          ],
+          "type": "branch",
+          "target": {
+            "rendered": {},
+            "hash": "b29718c106bd35072115922cbf7485df2c35c45b",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/b29718c106bd35072115922cbf7485df2c35c45b"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/commits/b29718c106bd35072115922cbf7485df2c35c45b"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D/"
+                  },
+                  "avatar": {
+                    "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5adc841c58742e214dcfdf8f/c778f2dd-1b58-456c-98c0-e466b7025306/128"
+                  }
+                },
+                "nickname": "Borys Zora",
+                "type": "user",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "WORK-1154: improve job_offer table, start implementing test JobOfferRepositoryImplIT.java, improve BaseTest.java to reuse methods\n",
+              "markup": "markdown",
+              "html": "<p>WORK-1154: improve job_offer table, start implementing test JobOfferRepositoryImplIT.java, improve BaseTest.java to reuse methods</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "hash": "56e33895fccad0e8ba9f34e2a13ffa4e8f2be8d4",
+                "type": "commit",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/56e33895fccad0e8ba9f34e2a13ffa4e8f2be8d4"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/commits/56e33895fccad0e8ba9f34e2a13ffa4e8f2be8d4"
+                  }
+                }
+              }
+            ],
+            "date": "2020-01-10T01:18:53+00:00",
+            "message": "WORK-1154: improve job_offer table, start implementing test JobOfferRepositoryImplIT.java, improve BaseTest.java to reuse methods\n",
+            "type": "commit",
+            "properties": {}
+          }
+        },
+        "links": {
+          "commits": {
+            "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commits?include=379a2a252617661164f5b76998f081eda12658fe&exclude=b29718c106bd35072115922cbf7485df2c35c45b"
+          },
+          "html": {
+            "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/branches/compare/379a2a252617661164f5b76998f081eda12658fe..b29718c106bd35072115922cbf7485df2c35c45b"
+          },
+          "diff": {
+            "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/diff/379a2a252617661164f5b76998f081eda12658fe..b29718c106bd35072115922cbf7485df2c35c45b"
+          }
+        },
+        "created": false,
+        "commits": [
+          {
+            "rendered": {},
+            "hash": "379a2a252617661164f5b76998f081eda12658fe",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/379a2a252617661164f5b76998f081eda12658fe"
+              },
+              "comments": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/379a2a252617661164f5b76998f081eda12658fe/comments"
+              },
+              "patch": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/patch/379a2a252617661164f5b76998f081eda12658fe"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/commits/379a2a252617661164f5b76998f081eda12658fe"
+              },
+              "diff": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/diff/379a2a252617661164f5b76998f081eda12658fe"
+              },
+              "approve": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/379a2a252617661164f5b76998f081eda12658fe/approve"
+              },
+              "statuses": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/379a2a252617661164f5b76998f081eda12658fe/statuses"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D/"
+                  },
+                  "avatar": {
+                    "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5adc841c58742e214dcfdf8f/c778f2dd-1b58-456c-98c0-e466b7025306/128"
+                  }
+                },
+                "nickname": "Borys Zora",
+                "type": "user",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "WORK-1154: add comments after code review\n",
+              "markup": "markdown",
+              "html": "<p>WORK-1154: add comments after code review</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "hash": "b29718c106bd35072115922cbf7485df2c35c45b",
+                "type": "commit",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/b29718c106bd35072115922cbf7485df2c35c45b"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/commits/b29718c106bd35072115922cbf7485df2c35c45b"
+                  }
+                }
+              }
+            ],
+            "date": "2020-01-14T00:53:39+00:00",
+            "message": "WORK-1154: add comments after code review\n",
+            "type": "commit",
+            "properties": {}
+          }
+        ],
+        "truncated": false,
+        "closed": false,
+        "new": {
+          "name": "develop",
+          "links": {
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commits/develop"
+            },
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/refs/branches/develop"
+            },
+            "html": {
+              "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/branch/develop"
+            }
+          },
+          "default_merge_strategy": "merge_commit",
+          "merge_strategies": [
+            "merge_commit",
+            "squash",
+            "fast_forward"
+          ],
+          "type": "branch",
+          "target": {
+            "rendered": {},
+            "hash": "379a2a252617661164f5b76998f081eda12658fe",
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/379a2a252617661164f5b76998f081eda12658fe"
+              },
+              "html": {
+                "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/commits/379a2a252617661164f5b76998f081eda12658fe"
+              }
+            },
+            "author": {
+              "raw": "Borys Zora <borys.zora@javatar.pro>",
+              "type": "author",
+              "user": {
+                "display_name": "Borys Zora",
+                "account_id": "5adc841c58742e214dcfdf8f",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/users/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D/"
+                  },
+                  "avatar": {
+                    "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5adc841c58742e214dcfdf8f/c778f2dd-1b58-456c-98c0-e466b7025306/128"
+                  }
+                },
+                "nickname": "Borys Zora",
+                "type": "user",
+                "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+              }
+            },
+            "summary": {
+              "raw": "WORK-1154: add comments after code review\n",
+              "markup": "markdown",
+              "html": "<p>WORK-1154: add comments after code review</p>",
+              "type": "rendered"
+            },
+            "parents": [
+              {
+                "hash": "b29718c106bd35072115922cbf7485df2c35c45b",
+                "type": "commit",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service/commit/b29718c106bd35072115922cbf7485df2c35c45b"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/javatar-pro-work/job-offer-service/commits/b29718c106bd35072115922cbf7485df2c35c45b"
+                  }
+                }
+              }
+            ],
+            "date": "2020-01-14T00:53:39+00:00",
+            "message": "WORK-1154: add comments after code review\n",
+            "type": "commit",
+            "properties": {}
+          }
+        }
+      }
+    ]
+  },
+  "actor": {
+    "display_name": "Borys Zora",
+    "account_id": "5adc841c58742e214dcfdf8f",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/users/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D"
+      },
+      "html": {
+        "href": "https://bitbucket.org/%7B3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da%7D/"
+      },
+      "avatar": {
+        "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5adc841c58742e214dcfdf8f/c778f2dd-1b58-456c-98c0-e466b7025306/128"
+      }
+    },
+    "nickname": "Borys Zora",
+    "type": "user",
+    "uuid": "{3f725063-6fd0-4a6d-a3b7-a2ff69a9e1da}"
+  },
+  "repository": {
+    "scm": "git",
+    "website": null,
+    "name": "job-offer-service",
+    "links": {
+      "self": {
+        "href": "https://api.bitbucket.org/2.0/repositories/javatar-pro-work/job-offer-service"
+      },
+      "html": {
+        "href": "https://bitbucket.org/javatar-pro-work/job-offer-service"
+      },
+      "avatar": {
+        "href": "https://bytebucket.org/ravatar/%7B06bd579c-fe77-4329-99f6-f253a3d77c77%7D?ts=2389643"
+      }
+    },
+    "project": {
+      "key": "REC",
+      "type": "project",
+      "uuid": "{80cb5f79-fe39-4d62-801b-def92f061fc2}",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/teams/javatar-pro-work/projects/REC"
+        },
+        "html": {
+          "href": "https://bitbucket.org/account/user/javatar-pro-work/projects/REC"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/user/javatar-pro-work/projects/REC/avatar/32"
+        }
+      },
+      "name": "recruitment"
+    },
+    "full_name": "javatar-pro-work/job-offer-service",
+    "owner": {
+      "username": "javatar-pro-work",
+      "display_name": "javatar-pro-work",
+      "type": "team",
+      "uuid": "{bdf73cff-4815-4fec-aeff-eb6faae29688}",
+      "links": {
+        "self": {
+          "href": "https://api.bitbucket.org/2.0/teams/%7Bbdf73cff-4815-4fec-aeff-eb6faae29688%7D"
+        },
+        "html": {
+          "href": "https://bitbucket.org/%7Bbdf73cff-4815-4fec-aeff-eb6faae29688%7D/"
+        },
+        "avatar": {
+          "href": "https://bitbucket.org/account/javatar-pro-work/avatar/"
+        }
+      }
+    },
+    "type": "repository",
+    "is_private": true,
+    "uuid": "{06bd579c-fe77-4329-99f6-f253a3d77c77}"
+  }
+}

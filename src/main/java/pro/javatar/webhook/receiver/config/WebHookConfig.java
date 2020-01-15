@@ -13,7 +13,6 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
  * @author Borys Zora
  * @version 2018-10-13
  */
-@Component
 @ConfigurationProperties("web-hook")
 public class WebHookConfig {
 

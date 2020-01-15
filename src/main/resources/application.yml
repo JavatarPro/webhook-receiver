@@ -1,4 +1,5 @@
-server.port: 7272
+server:
+  port: ${PORT:7272}
 
 web-hook:
   ignored-user: jenkins

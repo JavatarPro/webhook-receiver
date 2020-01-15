@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.core.Is;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import pro.javatar.webhook.receiver.config.WebHookConfig;
 import pro.javatar.webhook.receiver.resource.converter.GitLabVcsConverter;
 import pro.javatar.webhook.receiver.resource.converter.VcsConverter;
@@ -26,6 +27,7 @@ import static pro.javatar.webhook.receiver.TestUtils.getFileAsString;
  * Author : Borys Zora
  * Date Created: 4/9/18 02:27
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class VcsWebHookReceiverServiceTest {
 
     VcsWebHookReceiverService service;
